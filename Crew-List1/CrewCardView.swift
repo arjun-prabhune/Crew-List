@@ -23,6 +23,7 @@ struct CrewCardView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 275, height: 275)
+
                 
                 // MARK: - TITLE
                 Text(member.name)
@@ -50,6 +51,6 @@ struct CrewCardView: View {
 
 struct CrewCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CrewCardView(member: membersData[0])
+        CrewCardView(member: membersData[1])
     }
 }

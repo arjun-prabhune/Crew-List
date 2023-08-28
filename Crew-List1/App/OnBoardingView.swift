@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    // MARK: - Properties
+    
+    
+    var members: [Member] = membersData
+    
+    
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            ForEach(members[0...1]) { item in
+                CrewCardView(member: item)
+            } //: LOOP
+        } //: Tab
+        .tabViewStyle(PageTabViewStyle())
+        .padding(.vertical, 20)
     }
 }
 
 struct OnBoardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingView()
+        OnBoardingView(members: membersData)
     }
 }
